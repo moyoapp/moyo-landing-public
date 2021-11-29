@@ -14,7 +14,7 @@ export default function Section2() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/2HGyMUPQ9Pg"
+            src="https://www.youtube.com/embed/5dck-3Xj8ek"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
