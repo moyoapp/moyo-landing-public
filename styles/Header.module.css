@@ -1,0 +1,259 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 999;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 1000px;
+  height: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: white;
+  z-index: 999;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+._60logo {
+  display: block;
+}
+
+._48logo {
+  display: none;
+}
+
+.menuToggle {
+  display: none;
+}
+
+.menuGroup {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: GmarketSans;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.56px;
+  text-align: left;
+  color: #7a8196;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu:hover {
+  color: #0ecca8;
+}
+
+.menuBtn {
+  width: 100px;
+  height: 38px;
+  border-radius: 4px;
+  font-family: GmarketSans;
+  background-color: #0ecca8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 12px;
+}
+
+.btnText {
+  height: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.56px;
+  text-align: left;
+  color: #fff;
+}
+
+.blocking {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    flex: 0 1 768px;
+    height: 80px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    /* flex: 0 1 375px; */
+    flex: 1;
+    height: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .menuGroup {
+    display: none;
+  }
+
+  ._60logo {
+    display: none;
+  }
+
+  ._48logo {
+    display: block;
+  }
+
+  .menuToggle {
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+  }
+
+  .menuGroup.none {
+    display: none;
+  }
+
+  .menuGroup.active {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 56px;
+    background-color: white;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    z-index: 888;
+
+    animation-name: slidein;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+  }
+
+  .menuGroup.deactive {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 56px;
+    background-color: white;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    z-index: 888;
+    opacity: 0;
+
+    animation-name: slideout;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+  }
+
+  .menuGroup.deactive:hover {
+    display: none;
+  }
+
+  .menu.deactive {
+    visibility: hidden;
+  }
+
+  .menuBtn.deactive {
+    visibility: hidden;
+  }
+
+  .menu.active {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    animation-name: fadein;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+  .menuBtn.active {
+    display: flex;
+    width: 90%;
+    flex: 0 0 48px;
+    margin-top: 8px;
+    margin-left: 0px;
+
+    animation-name: fadein;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+  .blocking {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(6, 6, 7, 0.8);
+    z-index: 777;
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      height: 0px;
+      opacity: 0.5;
+    }
+
+    to {
+      height: 194px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideout {
+    from {
+      height: 194px;
+      opacity: 1;
+    }
+
+    to {
+      height: 0px;
+      opacity: 0.5;
+    }
+  }
+}
